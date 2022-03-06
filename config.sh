@@ -82,6 +82,8 @@ firewall-cmd --runtime-to-permanent
 firewall-cmd --reload
 firewall-cmd --list-services
 firewall-cmd --list-port
+cp /etc/firewalld/firewalld.conf /etc/firewalld/firewalld.conf_backup
+vim -c '%s/AllowZoneDrifting=yes/AllowZoneDrifting=no/g | wq' /etc/firewalld/firewalld.conf
 
 echo
 echo -e "\033[36m<<<<<===== --------------- =====>>>>>\033[0m"
