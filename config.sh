@@ -75,6 +75,7 @@ echo -e "\033[36m<<<<<===== ---------------- =====>>>>>\033[0m"
 echo -e "\033[36m<<<<<===== firewalld config =====>>>>>\033[0m"
 echo -e "\033[36m<<<<<===== ---------------- =====>>>>>\033[0m"
 echo
+systemctl enable --now firewalld
 firewall-cmd --remove-service=ssh
 firewall-cmd --remove-service=cockpit
 firewall-cmd --add-port=22122/tcp
