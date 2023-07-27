@@ -18,17 +18,17 @@ echo
 timedatectl set-timezone Europe/Warsaw
 localectl set-keymap pl
 cp /etc/locale.conf /etc/locale.conf_backup
-echo "LANG=en_US.UTF-8
-LC_MESSAGES=C
-LC_ADDRESS=pl_PL.UTF-8
-LC_IDENTIFICATION=pl_PL.UTF-8
-LC_MEASUREMENT=pl_PL.UTF-8
-LC_MONETARY=pl_PL.UTF-8
-LC_NAME=pl_PL.UTF-8
-LC_NUMERIC=pl_PL.UTF-8
-LC_PAPER=pl_PL.UTF-8
-LC_TELEPHONE=pl_PL.UTF-8
-LC_TIME=pl_PL.UTF-8" > /etc/locale.conf
+echo 'LANG=en_US.UTF-8
+LC_MESSAGES="C"
+LC_ADDRESS="pl_PL.UTF-8"
+LC_IDENTIFICATION="pl_PL.UTF-8"
+LC_MEASUREMENT="pl_PL.UTF-8"
+LC_MONETARY="pl_PL.UTF-8"
+LC_NAME="pl_PL.UTF-8"
+LC_NUMERIC="pl_PL.UTF-8"
+LC_PAPER="pl_PL.UTF-8"
+LC_TELEPHONE="pl_PL.UTF-8"
+LC_TIME="pl_PL.UTF-8"' > /etc/locale.conf
 echo "success"
 
 echo
@@ -56,7 +56,7 @@ echo -e "\033[36m<<<<<===== ------------------------------ =====>>>>>\033[0m"
 echo -e "\033[36m<<<<<===== Installing additional software =====>>>>>\033[0m"
 echo -e "\033[36m<<<<<===== ------------------------------ =====>>>>>\033[0m"
 echo
-dnf -y install fail2ban fail2ban-firewalld firewalld git policycoreutils-python-utils rkhunter vim
+dnf -y install fail2ban fail2ban-firewalld firewalld git glibc-langpack-pl policycoreutils-python-utils rkhunter vim
 systemctl enable --now fail2ban
 
 echo
