@@ -65,7 +65,7 @@ echo -e "\033[36m<<<<<===== sshd config =====>>>>>\033[0m"
 echo -e "\033[36m<<<<<===== ----------- =====>>>>>\033[0m"
 echo
 cp /etc/ssh/sshd_config /etc/ssh/sshd_config_backup
-vim -c '%s/#Port 22/Port 22122/g | %s/PermitRootLogin yes/PermitRootLogin no/g | %s/PasswordAuthentication yes/PasswordAuthentication no/g | wq' /etc/ssh/sshd_config
+vim -c '%s/#Port 22/Port 22122/g | %s/#PasswordAuthentication yes/PasswordAuthentication no/g | %s/#PermitEmptyPasswords no/PermitEmptyPasswords no' /etc/ssh/sshd_config
 semanage port -a -t ssh_port_t -p tcp 22122
 systemctl restart sshd
 echo "success"
@@ -84,7 +84,6 @@ firewall-cmd --reload
 firewall-cmd --list-services
 firewall-cmd --list-port
 cp /etc/firewalld/firewalld.conf /etc/firewalld/firewalld.conf_backup
-vim -c '%s/AllowZoneDrifting=yes/AllowZoneDrifting=no/g | wq' /etc/firewalld/firewalld.conf
 
 echo
 echo -e "\033[36m<<<<<===== --------------- =====>>>>>\033[0m"
