@@ -56,7 +56,7 @@ echo -e "\033[36m<<<<<===== ------------------------------ =====>>>>>\033[0m"
 echo -e "\033[36m<<<<<===== Installing additional software =====>>>>>\033[0m"
 echo -e "\033[36m<<<<<===== ------------------------------ =====>>>>>\033[0m"
 echo
-dnf -y install fail2ban fail2ban-firewalld firewalld git glibc-langpack-pl policycoreutils-python-utils rkhunter vim
+dnf -y install fail2ban fail2ban-firewalld firewalld git glibc-langpack-pl policycoreutils-python-utils rkhunter vim zsh htop rsync tar util-linux-user
 systemctl enable --now fail2ban
 
 echo
