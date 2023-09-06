@@ -48,6 +48,7 @@ echo -e "\033[36m<<<<<===== Installing additional repo =====>>>>>\033[0m"
 echo -e "\033[36m<<<<<===== -------------------------- =====>>>>>\033[0m"
 echo
 dnf -y install epel-release
+dnf -y install http://rpms.remirepo.net/enterprise/remi-release-9.rpm
 dnf check-update
 dnf -y upgrade
 
